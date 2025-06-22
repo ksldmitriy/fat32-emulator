@@ -11,10 +11,10 @@ TARGET := $(BIN_DIR)/fat32
 all: $(TARGET)
 
 $(TARGET): $(OBJS) | $(BIN_DIR)
-	$(CC) $(OBJS) -o $@
+	$(CC) $(OBJS) -ggdb -o $@
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c | $(BUILD_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -ggdb -c $< -o $@
 
 $(BUILD_DIR) $(BIN_DIR):
 	mkdir -p $@
